@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090f18"/>
+      <stop offset="1" stop-color="#171422"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowBlue" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#55c7ff"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#62ff83"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#c084ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="64" y="54" width="1792" height="972" rx="30" fill="#0f1622" stroke="#2b3850" stroke-width="2"/>
+
+  <text x="120" y="135" fill="#f4f8ff" font-size="56" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Pixel Material System / 像素材料系统</text>
+  <text x="120" y="184" fill="#9fb0c8" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">One material rule set, three simulation schedulers. 同一套材料规则，切换三种模拟调度方式。</text>
+
+  <g transform="translate(710 250)" filter="url(#softGlow)">
+    <rect x="0" y="0" width="500" height="180" rx="22" fill="#142033" stroke="#55c7ff" stroke-width="4"/>
+    <text x="250" y="62" text-anchor="middle" fill="#55c7ff" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">MaterialDatabase</text>
+    <text x="250" y="108" text-anchor="middle" fill="#f4f8ff" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">Density / Color / Lifetime / Heat</text>
+    <text x="250" y="148" text-anchor="middle" fill="#b6c7df" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">密度、颜色、生命周期、温度与燃烧参数</text>
+  </g>
+
+  <g transform="translate(190 520)">
+    <rect x="0" y="0" width="390" height="190" rx="20" fill="#151f2d" stroke="#55c7ff" stroke-width="3"/>
+    <text x="195" y="58" text-anchor="middle" fill="#55c7ff" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">MovementSystem</text>
+    <text x="195" y="106" text-anchor="middle" fill="#f4f8ff" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">Fall / Flow / Swap</text>
+    <text x="195" y="148" text-anchor="middle" fill="#b6c7df" font-size="26" font-family="Arial, Microsoft YaHei, sans-serif">下落、流动、密度交换</text>
+  </g>
+
+  <g transform="translate(670 520)">
+    <rect x="0" y="0" width="580" height="190" rx="20" fill="#171f29" stroke="#62ff83" stroke-width="3"/>
+    <text x="290" y="58" text-anchor="middle" fill="#62ff83" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">PixelSimulation</text>
+    <text x="290" y="106" text-anchor="middle" fill="#f4f8ff" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">Choose which cells are checked this frame</text>
+    <text x="290" y="148" text-anchor="middle" fill="#b6c7df" font-size="26" font-family="Arial, Microsoft YaHei, sans-serif">决定这一帧到底检查哪些格子</text>
+  </g>
+
+  <g transform="translate(1340 520)">
+    <rect x="0" y="0" width="390" height="190" rx="20" fill="#211a2f" stroke="#ffb45a" stroke-width="3"/>
+    <text x="195" y="58" text-anchor="middle" fill="#ffb45a" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">InteractionSystem</text>
+    <text x="195" y="106" text-anchor="middle" fill="#f4f8ff" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">Fire / Heat / Smoke / Ash</text>
+    <text x="195" y="148" text-anchor="middle" fill="#b6c7df" font-size="26" font-family="Arial, Microsoft YaHei, sans-serif">燃烧、温度、烟雾、灰烬</text>
+  </g>
+
+  <path d="M820 430 C720 460, 500 460, 385 520" fill="none" stroke="#55c7ff" stroke-width="6" marker-end="url(#arrowBlue)"/>
+  <path d="M960 430 V520" fill="none" stroke="#62ff83" stroke-width="6" marker-end="url(#arrowGreen)"/>
+  <path d="M1100 430 C1230 462, 1430 460, 1530 520" fill="none" stroke="#ffb45a" stroke-width="6" marker-end="url(#arrowPurple)"/>
+
+  <g transform="translate(185 790)">
+    <rect x="0" y="0" width="475" height="145" rx="18" fill="#261b1f" stroke="#ff5757" stroke-width="3"/>
+    <text x="238" y="48" text-anchor="middle" fill="#ff5757" font-size="31" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">1. Full Scan / 全图扫描</text>
+    <text x="238" y="92" text-anchor="middle" fill="#f4f8ff" font-size="25" font-family="Arial, Microsoft YaHei, sans-serif">Check every cell every step</text>
+    <text x="238" y="126" text-anchor="middle" fill="#cbb3b5" font-size="24" font-family="Arial, Microsoft YaHei, sans-serif">每步检查整张 PixelGrid，最直观也最慢</text>
+  </g>
+
+  <g transform="translate(722 790)">
+    <rect x="0" y="0" width="475" height="145" rx="18" fill="#15261c" stroke="#62ff83" stroke-width="3"/>
+    <text x="238" y="48" text-anchor="middle" fill="#62ff83" font-size="31" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">2. Active Pixels / 活跃像素</text>
+    <text x="238" y="92" text-anchor="middle" fill="#f4f8ff" font-size="25" font-family="Arial, Microsoft YaHei, sans-serif">Update changed pixels + neighbors</text>
+    <text x="238" y="126" text-anchor="middle" fill="#b4d2bd" font-size="24" font-family="Arial, Microsoft YaHei, sans-serif">只算变化区域，当前 Demo 帧率最好</text>
+  </g>
+
+  <g transform="translate(1259 790)">
+    <rect x="0" y="0" width="475" height="145" rx="18" fill="#211733" stroke="#c084ff" stroke-width="3"/>
+    <text x="238" y="48" text-anchor="middle" fill="#c084ff" font-size="31" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">3. Chunk Based / 区块更新</text>
+    <text x="238" y="92" text-anchor="middle" fill="#f4f8ff" font-size="25" font-family="Arial, Microsoft YaHei, sans-serif">Wake active chunks, sleep quiet chunks</text>
+    <text x="238" y="126" text-anchor="middle" fill="#c9b4df" font-size="24" font-family="Arial, Microsoft YaHei, sans-serif">适合未来 Job、Burst、Compute Shader</text>
+  </g>
+
+  <path d="M865 710 C710 750, 550 760, 430 790" fill="none" stroke="#ff5757" stroke-width="5" marker-end="url(#arrowPurple)" opacity="0.75"/>
+  <path d="M960 710 V790" fill="none" stroke="#62ff83" stroke-width="5" marker-end="url(#arrowGreen)" opacity="0.85"/>
+  <path d="M1055 710 C1200 750, 1360 760, 1490 790" fill="none" stroke="#c084ff" stroke-width="5" marker-end="url(#arrowPurple)" opacity="0.85"/>
+
+  <text x="960" y="984" text-anchor="middle" fill="#9fb0c8" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">核心结论：材料规则不变，性能差异来自“调度哪些格子参与计算”。</text>
+</svg>

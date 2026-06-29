@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081116"/>
+      <stop offset="1" stop-color="#12251f"/>
+    </linearGradient>
+    <filter id="greenGlow">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowGreen" markerWidth="18" markerHeight="18" refX="14" refY="9" orient="auto">
+      <path d="M2,2 L16,9 L2,16 Z" fill="#5cff78"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="70" y="62" width="1780" height="956" rx="28" fill="#0d1719" stroke="#24463b" stroke-width="2"/>
+
+  <text x="120" y="142" fill="#f3fff7" font-size="58" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Active Pixels / 活跃像素</text>
+  <text x="120" y="194" fill="#a9c8b4" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">Only pixels near movement, heat, lifetime or material changes are updated. 只更新发生变化附近的像素。</text>
+
+  <g transform="translate(120 270)">
+    <rect x="0" y="0" width="960" height="600" rx="12" fill="#101c1d" stroke="#2e5a4a" stroke-width="3"/>
+    <g opacity="0.62">
+      <rect x="32" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="84" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="136" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="188" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="240" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="292" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="344" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="396" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="448" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="500" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="552" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="604" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="656" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="708" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="760" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="812" y="32" width="52" height="52" fill="#10171c" stroke="#213239"/>
+    </g>
+    <g opacity="0.38">
+      <rect x="32" y="84" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="136" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="188" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="240" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="292" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="344" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="396" width="832" height="52" fill="#10171c" stroke="#213239"/>
+      <rect x="32" y="448" width="832" height="52" fill="#5c544a" stroke="#8c8175"/>
+    </g>
+
+    <g filter="url(#greenGlow)">
+      <rect x="292" y="188" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+      <rect x="344" y="240" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+      <rect x="396" y="292" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+      <rect x="448" y="344" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+      <rect x="500" y="396" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+      <rect x="552" y="396" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff" stroke-width="2"/>
+    </g>
+
+    <g opacity="0.92">
+      <rect x="240" y="136" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="292" y="136" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="344" y="136" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="292" y="188" width="52" height="52" fill="#2b7bd6" stroke="#5cff78" stroke-width="4"/>
+      <rect x="344" y="188" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="396" y="240" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="448" y="292" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="500" y="344" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="552" y="344" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="604" y="344" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+      <rect x="500" y="396" width="52" height="52" fill="#2b7bd6" stroke="#5cff78" stroke-width="4"/>
+      <rect x="552" y="396" width="52" height="52" fill="#2b7bd6" stroke="#5cff78" stroke-width="4"/>
+      <rect x="604" y="396" width="52" height="52" fill="#213326" stroke="#5cff78" stroke-width="3"/>
+    </g>
+
+    <path d="M318 214 C390 220, 414 275, 474 318" fill="none" stroke="#5cff78" stroke-width="7" marker-end="url(#arrowGreen)"/>
+    <path d="M526 420 C590 410, 640 392, 680 348" fill="none" stroke="#5cff78" stroke-width="7" marker-end="url(#arrowGreen)"/>
+    <text x="38" y="566" fill="#5cff78" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Wake self + neighbors / 变化后唤醒自己和邻居</text>
+  </g>
+
+  <g transform="translate(1160 300)">
+    <rect x="0" y="0" width="610" height="170" rx="16" fill="#14241f" stroke="#5cff78" stroke-width="2"/>
+    <text x="30" y="55" fill="#5cff78" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Idea / 核心思想</text>
+    <text x="30" y="108" fill="#f3fff7" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif">Static areas sleep</text>
+    <text x="30" y="150" fill="#a9c8b4" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">静止区域不再重复计算</text>
+  </g>
+  <g transform="translate(1160 520)">
+    <rect x="0" y="0" width="610" height="230" rx="16" fill="#14241f" stroke="#35a7ff" stroke-width="2"/>
+    <text x="30" y="55" fill="#35a7ff" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Updated when / 何时激活</text>
+    <text x="30" y="108" fill="#f3fff7" font-size="29" font-family="Arial, Microsoft YaHei, sans-serif">Move / Exchange / Burn</text>
+    <text x="30" y="153" fill="#f3fff7" font-size="29" font-family="Arial, Microsoft YaHei, sans-serif">Temperature / Lifetime</text>
+    <text x="30" y="198" fill="#a9c8b4" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">移动、交换、燃烧、温度、生命周期变化</text>
+  </g>
+  <text x="1160" y="835" fill="#5cff78" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Best for sparse change. Fast in this demo. / 变化稀疏时最快，本 Demo 表现最好。</text>
+</svg>

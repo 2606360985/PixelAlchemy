@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1018"/>
+      <stop offset="1" stop-color="#171f2b"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4d4d" stop-opacity="0.05"/>
+      <stop offset="0.5" stop-color="#ffcc33" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ff4d4d" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowHot" markerWidth="18" markerHeight="18" refX="14" refY="9" orient="auto">
+      <path d="M2,2 L16,9 L2,16 Z" fill="#ffcc33"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="70" y="62" width="1780" height="956" rx="28" fill="#0f1621" stroke="#263348" stroke-width="2"/>
+
+  <text x="120" y="142" fill="#f3f8ff" font-size="58" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Full Scan / 全图扫描</text>
+  <text x="120" y="194" fill="#aab8cc" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">Every simulation step checks every cell, whether it changed or not. 每个模拟步都检查整张 PixelGrid。</text>
+
+  <g transform="translate(120 270)">
+    <rect x="0" y="0" width="960" height="600" rx="12" fill="#101824" stroke="#31435e" stroke-width="3"/>
+    <g opacity="0.95">
+      <rect x="26" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="78" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="130" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="182" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="234" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="286" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="338" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="390" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="442" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="494" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="546" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="598" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="650" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="702" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="754" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="806" y="26" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+    </g>
+    <g opacity="0.95">
+      <script type="application/ecmascript"><![CDATA[]]></script>
+      <rect x="26" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="78" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="130" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="182" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="234" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="286" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="338" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="390" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="442" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="494" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="546" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="598" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="650" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="702" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="754" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+      <rect x="806" y="78" width="52" height="52" fill="#151f2d" stroke="#2a3b55"/>
+    </g>
+    <g>
+      <rect x="182" y="182" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="234" y="182" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="286" y="182" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="338" y="234" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="390" y="286" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="442" y="338" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="494" y="390" width="52" height="52" fill="#2b7bd6" stroke="#8dc6ff"/>
+      <rect x="130" y="442" width="728" height="78" fill="#5c544a" stroke="#9a8e80"/>
+      <rect x="598" y="286" width="52" height="52" fill="#7e4e26" stroke="#d39a64"/>
+      <rect x="650" y="286" width="52" height="52" fill="#7e4e26" stroke="#d39a64"/>
+    </g>
+    <g opacity="0.42">
+      <path d="M26 156 H858" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+      <path d="M858 216 H26" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+      <path d="M26 276 H858" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+      <path d="M858 336 H26" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+      <path d="M26 396 H858" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+      <path d="M858 456 H26" stroke="#ffcc33" stroke-width="6" marker-end="url(#arrowHot)"/>
+    </g>
+    <rect x="18" y="132" width="858" height="364" fill="url(#scan)" opacity="0.18" filter="url(#glow)"/>
+    <text x="38" y="566" fill="#ffcc33" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Air, Stone, Water, Wood... all visited / 空气、石头、水、木头全部被扫描</text>
+  </g>
+
+  <g transform="translate(1160 300)">
+    <rect x="0" y="0" width="610" height="145" rx="16" fill="#1a2433" stroke="#ffcc33" stroke-width="2"/>
+    <text x="30" y="52" fill="#ffcc33" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Cost / 代价</text>
+    <text x="30" y="100" fill="#f3f8ff" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif">Width × Height × Passes</text>
+  </g>
+  <g transform="translate(1160 490)">
+    <rect x="0" y="0" width="610" height="220" rx="16" fill="#1a2433" stroke="#ff6b4a" stroke-width="2"/>
+    <text x="30" y="55" fill="#ff6b4a" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Example / 示例</text>
+    <text x="30" y="108" fill="#f3f8ff" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif">384 × 216 = 82,944 cells</text>
+    <text x="30" y="158" fill="#f3f8ff" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif">Movement + Interaction</text>
+    <text x="30" y="205" fill="#ffcc33" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">≈ 165,888 checks / step</text>
+  </g>
+  <text x="1160" y="805" fill="#ff6b4a" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Best for explaining the baseline. Not scalable. / 适合讲清基线，但不适合大规模。</text>
+</svg>

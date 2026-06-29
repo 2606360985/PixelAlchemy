@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0b18"/>
+      <stop offset="1" stop-color="#1f1830"/>
+    </linearGradient>
+    <filter id="purpleGlow">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowPurple" markerWidth="18" markerHeight="18" refX="14" refY="9" orient="auto">
+      <path d="M2,2 L16,9 L2,16 Z" fill="#c084ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="70" y="62" width="1780" height="956" rx="28" fill="#11101d" stroke="#40315f" stroke-width="2"/>
+
+  <text x="120" y="142" fill="#fbf7ff" font-size="58" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Chunk Based / 区块更新</text>
+  <text x="120" y="194" fill="#c5b6d8" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">Split the grid into chunks. Only active chunks are scanned. 把地图切块，只扫描活跃区块。</text>
+
+  <g transform="translate(120 270)">
+    <rect x="0" y="0" width="960" height="600" rx="12" fill="#141321" stroke="#594276" stroke-width="3"/>
+
+    <g opacity="0.55">
+      <rect x="42" y="42" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="202" y="42" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="362" y="42" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="522" y="42" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="682" y="42" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="42" y="162" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="202" y="162" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="362" y="162" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="522" y="162" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="682" y="162" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="42" y="282" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="202" y="282" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="362" y="282" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="522" y="282" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="682" y="282" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="42" y="402" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="202" y="402" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="362" y="402" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="522" y="402" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+      <rect x="682" y="402" width="160" height="120" fill="#181a25" stroke="#4a3a61" stroke-width="3"/>
+    </g>
+
+    <g filter="url(#purpleGlow)">
+      <rect x="202" y="162" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="362" y="162" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="522" y="162" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="202" y="282" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="362" y="282" width="160" height="120" fill="#4f3278" stroke="#e1b3ff" stroke-width="6"/>
+      <rect x="522" y="282" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="202" y="402" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="362" y="402" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+      <rect x="522" y="402" width="160" height="120" fill="#3a2858" stroke="#c084ff" stroke-width="5"/>
+    </g>
+
+    <g>
+      <circle cx="442" cy="342" r="18" fill="#35a7ff"/>
+      <circle cx="472" cy="368" r="18" fill="#35a7ff"/>
+      <circle cx="412" cy="368" r="18" fill="#35a7ff"/>
+      <circle cx="442" cy="394" r="18" fill="#35a7ff"/>
+      <path d="M442 342 C360 270, 300 235, 282 222" fill="none" stroke="#c084ff" stroke-width="7" marker-end="url(#arrowPurple)"/>
+      <path d="M442 342 C522 270, 590 235, 602 222" fill="none" stroke="#c084ff" stroke-width="7" marker-end="url(#arrowPurple)"/>
+      <path d="M442 342 C522 440, 590 470, 602 462" fill="none" stroke="#c084ff" stroke-width="7" marker-end="url(#arrowPurple)"/>
+      <path d="M442 342 C360 440, 300 470, 282 462" fill="none" stroke="#c084ff" stroke-width="7" marker-end="url(#arrowPurple)"/>
+    </g>
+
+    <text x="38" y="566" fill="#c084ff" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Wake current chunk + neighbors / 唤醒当前区块和相邻区块</text>
+  </g>
+
+  <g transform="translate(1160 300)">
+    <rect x="0" y="0" width="610" height="170" rx="16" fill="#1b1729" stroke="#c084ff" stroke-width="2"/>
+    <text x="30" y="55" fill="#c084ff" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Chunk / 区块</text>
+    <text x="30" y="108" fill="#fbf7ff" font-size="30" font-family="Arial, Microsoft YaHei, sans-serif">16×16 or 32×32 cells</text>
+    <text x="30" y="150" fill="#c5b6d8" font-size="28" font-family="Arial, Microsoft YaHei, sans-serif">每块记录 active / sleep 状态</text>
+  </g>
+  <g transform="translate(1160 520)">
+    <rect x="0" y="0" width="610" height="230" rx="16" fill="#1b1729" stroke="#ffcc33" stroke-width="2"/>
+    <text x="30" y="55" fill="#ffcc33" font-size="34" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Why useful / 为什么有用</text>
+    <text x="30" y="108" fill="#fbf7ff" font-size="29" font-family="Arial, Microsoft YaHei, sans-serif">Stable scheduling unit</text>
+    <text x="30" y="153" fill="#fbf7ff" font-size="29" font-family="Arial, Microsoft YaHei, sans-serif">Good for Jobs / Burst / GPU</text>
+    <text x="30" y="198" fill="#c5b6d8" font-size="27" font-family="Arial, Microsoft YaHei, sans-serif">更适合未来多线程、Burst、Compute Shader</text>
+  </g>
+  <text x="1160" y="835" fill="#c084ff" font-size="32" font-family="Arial, Microsoft YaHei, sans-serif" font-weight="700">Coarser than Active Pixels, but more scalable. / 比活跃像素粗，但更适合扩展。</text>
+</svg>
