@@ -6,6 +6,7 @@ namespace NoitaCA
     public sealed class PixelCreature : MonoBehaviour
     {
         private const float MovementSpeedScale = 0.72f;
+        private const int MaxStepUpCells = 3;
 
         private struct OccupiedBodyCell
         {
@@ -93,6 +94,12 @@ namespace NoitaCA
         public void AddImpulse(Vector2 impulse)
         {
             velocity += impulse;
+        }
+
+        public void Despawn()
+        {
+            ClearBody();
+            Destroy(gameObject);
         }
 
         private void TickMovement()
@@ -217,12 +224,13 @@ namespace NoitaCA
 
         private void MoveWithGridCollision(Vector2 delta)
         {
+            bool canStepUp = grounded;
             grounded = false;
-            MoveAxis(new Vector2(delta.x, 0f));
-            MoveAxis(new Vector2(0f, delta.y));
+            MoveAxis(new Vector2(delta.x, 0f), canStepUp);
+            MoveAxis(new Vector2(0f, delta.y), false);
         }
 
-        private void MoveAxis(Vector2 delta)
+        private void MoveAxis(Vector2 delta, bool canStepUp)
         {
             if (delta.sqrMagnitude <= 0f)
             {
@@ -249,6 +257,11 @@ namespace NoitaCA
                     }
                     else
                     {
+                        if (canStepUp && TryStepUp(step, cellWorldSize))
+                        {
+                            continue;
+                        }
+
                         velocity.x = 0f;
                     }
 
@@ -257,6 +270,28 @@ namespace NoitaCA
 
                 transform.position = nextPosition;
             }
+        }
+
+        private bool TryStepUp(Vector2 horizontalStep, float cellWorldSize)
+        {
+            if (Mathf.Abs(horizontalStep.x) <= 0.0001f)
+            {
+                return false;
+            }
+
+            for (int y = 1; y <= MaxStepUpCells; y++)
+            {
+                Vector3 steppedPosition = transform.position + new Vector3(horizontalStep.x, y * cellWorldSize, 0f);
+                if (!OverlapsSolid(steppedPosition))
+                {
+                    transform.position = steppedPosition;
+                    grounded = false;
+                    velocity.y = Mathf.Max(0f, velocity.y);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private bool OverlapsSolid(Vector3 worldPosition)
@@ -472,6 +507,11 @@ namespace NoitaCA
 
         private void OnDestroy()
         {
+            if (grid != null)
+            {
+                ClearBody();
+            }
+
             PixelCreatureRegistry.Unregister(this);
         }
 

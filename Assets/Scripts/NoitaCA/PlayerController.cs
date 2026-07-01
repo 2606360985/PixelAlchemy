@@ -24,6 +24,7 @@ namespace NoitaCA
         [SerializeField] private float runSpeedMultiplier = 1.45f;
         [SerializeField] private float jumpSpeed = 7.2f;
         [SerializeField] private float gravity = -22f;
+        [SerializeField] private int maxStepUpCells = 3;
 
         [Header("Size")]
         [SerializeField] private int widthInCells = 7;
@@ -277,7 +278,15 @@ namespace NoitaCA
 
             float ppu = Mathf.Max(1, worldRenderer.PixelsPerUnit);
             Vector3 position = transform.position + Vector3.up * (heightInCells / ppu * 0.72f + 0.18f);
-            PlayerDamageNumberFeedback.Spawn(position, transform.parent, Mathf.Max(1, worldRenderer.PixelsPerUnit), damage);
+            int sortingLayerId = spriteRenderer != null ? spriteRenderer.sortingLayerID : 0;
+            int sortingOrder = spriteRenderer != null ? spriteRenderer.sortingOrder + 6 : 16;
+            PlayerDamageNumberFeedback.Spawn(
+                position,
+                transform.parent,
+                Mathf.Max(1, worldRenderer.PixelsPerUnit),
+                damage,
+                sortingLayerId,
+                sortingOrder);
         }
 
         private void SetSpriteColor(Color color)
@@ -331,12 +340,13 @@ namespace NoitaCA
 
         private void MoveWithGridCollision(Vector2 delta)
         {
+            bool canStepUp = grounded;
             grounded = false;
-            MoveAxis(new Vector2(delta.x, 0f));
-            MoveAxis(new Vector2(0f, delta.y));
+            MoveAxis(new Vector2(delta.x, 0f), canStepUp);
+            MoveAxis(new Vector2(0f, delta.y), false);
         }
 
-        private void MoveAxis(Vector2 delta)
+        private void MoveAxis(Vector2 delta, bool canStepUp)
         {
             if (delta.sqrMagnitude <= 0f)
             {
@@ -363,6 +373,11 @@ namespace NoitaCA
                     }
                     else
                     {
+                        if (canStepUp && TryStepUp(step, cellWorldSize))
+                        {
+                            continue;
+                        }
+
                         velocity.x = 0f;
                     }
 
@@ -371,6 +386,29 @@ namespace NoitaCA
 
                 transform.position = nextPosition;
             }
+        }
+
+        private bool TryStepUp(Vector2 horizontalStep, float cellWorldSize)
+        {
+            if (Mathf.Abs(horizontalStep.x) <= 0.0001f)
+            {
+                return false;
+            }
+
+            int safeStepCells = Mathf.Max(0, maxStepUpCells);
+            for (int y = 1; y <= safeStepCells; y++)
+            {
+                Vector3 steppedPosition = transform.position + new Vector3(horizontalStep.x, y * cellWorldSize, 0f);
+                if (!OverlapsSolid(steppedPosition))
+                {
+                    transform.position = steppedPosition;
+                    grounded = false;
+                    velocity.y = Mathf.Max(0f, velocity.y);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private bool OverlapsSolid(Vector3 worldPosition)

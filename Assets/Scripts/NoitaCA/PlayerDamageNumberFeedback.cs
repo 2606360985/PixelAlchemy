@@ -11,7 +11,7 @@ namespace NoitaCA
         private float lifetime = 0.8f;
         private float age;
 
-        public static void Spawn(Vector3 worldPosition, Transform parent, int pixelsPerUnit, float damage)
+        public static void Spawn(Vector3 worldPosition, Transform parent, int pixelsPerUnit, float damage, int sortingLayerId, int sortingOrder)
         {
             int displayDamage = Mathf.Max(1, Mathf.CeilToInt(damage));
             GameObject numberObject = new GameObject("Player Damage Number");
@@ -19,13 +19,14 @@ namespace NoitaCA
             numberObject.transform.position = worldPosition;
 
             PlayerDamageNumberFeedback feedback = numberObject.AddComponent<PlayerDamageNumberFeedback>();
-            feedback.Initialize("-" + displayDamage, Mathf.Max(1, pixelsPerUnit));
+            feedback.Initialize("-" + displayDamage, Mathf.Max(1, pixelsPerUnit), sortingLayerId, sortingOrder);
         }
 
-        private void Initialize(string text, int pixelsPerUnit)
+        private void Initialize(string text, int pixelsPerUnit, int sortingLayerId, int sortingOrder)
         {
             spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-            spriteRenderer.sortingOrder = 16;
+            spriteRenderer.sortingLayerID = sortingLayerId;
+            spriteRenderer.sortingOrder = sortingOrder;
             sprite = CreateNumberSprite(text, pixelsPerUnit);
             spriteRenderer.sprite = sprite;
             velocity = new Vector3(0.18f, 1.15f, 0f);

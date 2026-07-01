@@ -116,7 +116,14 @@ namespace NoitaCA
             {
                 if (spawnedObjects[i] != null)
                 {
-                    Destroy(spawnedObjects[i]);
+                    if (spawnedObjects[i].TryGetComponent(out PixelCreature creature))
+                    {
+                        creature.Despawn();
+                    }
+                    else
+                    {
+                        Destroy(spawnedObjects[i]);
+                    }
                 }
             }
 

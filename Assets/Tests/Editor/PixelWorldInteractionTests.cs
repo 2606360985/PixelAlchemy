@@ -226,6 +226,52 @@ public sealed class PixelWorldInteractionTests
         }
     }
 
+    [Test]
+    public void DamageNumberUsesConfiguredSorting()
+    {
+        PlayerDamageNumberFeedback.Spawn(Vector3.zero, null, 8, 3f, 0, 23);
+        GameObject feedbackObject = GameObject.Find("Player Damage Number");
+        try
+        {
+            Assert.IsNotNull(feedbackObject);
+            SpriteRenderer spriteRenderer = feedbackObject.GetComponent<SpriteRenderer>();
+            Assert.IsNotNull(spriteRenderer);
+            Assert.AreEqual(23, spriteRenderer.sortingOrder);
+        }
+        finally
+        {
+            Object.DestroyImmediate(feedbackObject);
+        }
+    }
+
+    [Test]
+    public void DestroyedCreatureClearsRenderedBodyCells()
+    {
+        GameObject rendererObject = new GameObject("Creature Renderer Test");
+        GameObject creatureObject = new GameObject("Creature Cleanup Test");
+        PixelCreatureDefinition creatureDefinition = PixelCreatureDefinition.CreateRuntimeCrawler(null);
+        try
+        {
+            PixelGrid grid = new PixelGrid(32, 24);
+            PixelWorldRenderer renderer = rendererObject.AddComponent<PixelWorldRenderer>();
+            renderer.Initialize(grid, 8);
+
+            PixelCreature creature = creatureObject.AddComponent<PixelCreature>();
+            creature.Initialize(creatureDefinition, grid, renderer, null, new Vector2Int(12, 8));
+            Assert.Greater(CountCreatureBodyCells(grid), 0);
+
+            Object.DestroyImmediate(creatureObject);
+
+            Assert.AreEqual(0, CountCreatureBodyCells(grid));
+        }
+        finally
+        {
+            Object.DestroyImmediate(creatureDefinition);
+            Object.DestroyImmediate(creatureObject);
+            Object.DestroyImmediate(rendererObject);
+        }
+    }
+
     private static int CountMaterial(PixelGrid grid, MaterialType materialType)
     {
         int count = 0;
@@ -234,6 +280,23 @@ public sealed class PixelWorldInteractionTests
             for (int x = 0; x < grid.Width; x++)
             {
                 if (grid.GetMaterial(x, y) == materialType)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    private static int CountCreatureBodyCells(PixelGrid grid)
+    {
+        int count = 0;
+        for (int y = 0; y < grid.Height; y++)
+        {
+            for (int x = 0; x < grid.Width; x++)
+            {
+                if (grid.GetCell(x, y).IsCreatureBody)
                 {
                     count++;
                 }
